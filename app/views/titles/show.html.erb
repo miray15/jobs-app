@@ -1,0 +1,36 @@
+<h1>New Job</h1>
+<%= form_with model: @title do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :company_name %>
+    <%= form.text_field :company_name %>
+  </div>
+  <div>
+    <%= form.label :job_description %>
+    <%= form.text_field :job_description %>
+  </div>
+  <div>
+    <%= form.label :date_applied %>
+    <%= form.text_field :date_applied %>
+  </div>
+  <div>
+    <%= form.label :followed_up %>
+    <%= form.text_field :followed_up %>
+  </div><div>
+    <%= form.label :salary %>
+    <%= form.text_field :salary %>
+  </div>
+  <div>
+    <%= form.label :remote %>
+    <%= form.text_field :remote %>
+  </div><div>
+    <%= form.label :updated_at %>
+    <%= form.text_field :updated_at %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end%>
