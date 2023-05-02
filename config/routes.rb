@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   resources :will_applies
 
+  post "/users" => "users#create"
+  
 end
