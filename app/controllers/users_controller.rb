@@ -18,8 +18,13 @@ class UsersController < ApplicationController
     @users = User.all 
     render :index 
   end 
+
+  def show 
+    @user = User.find_by(id: params[:id])
+    render :show
+  end 
   
-web_response = HTTP.get("https://jooble.org/").parse(:json)
-render json: web_response
+# web_response = HTTP.get("https://jooble.org/").parse(:json)
+# render json: web_response
 
 end
