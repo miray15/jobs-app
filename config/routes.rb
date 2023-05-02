@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :will_applies
 
   post "/users" => "users#create"
+
+  post "/sessions" => "sessions#create"
   
 end
