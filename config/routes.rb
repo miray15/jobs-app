@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "users#home"
   resources :titles
 
 
@@ -6,9 +7,13 @@ Rails.application.routes.draw do
 
   resources :users
 
+
+
   get "/login" => "sessions#new"
-  post "/sessions" => "sessions#create"
+  post "sessions" => "sessions#create"
   get "/logout" => "sessions#destroy"
+
+  resources :sessions
 
   
   
