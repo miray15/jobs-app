@@ -1,6 +1,6 @@
 <h1>Signup</h1>
 <%= form_with model: @user do |form| %>
-  <div>
+  <div class="form-control">
     <%= form.label :name %>
     <%= form.text_field :name %>
     <% @user.errors.full_messages_for(:name).each do |message| %>

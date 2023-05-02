@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def new 
+    @user = User.new 
+    render template: "users/new"
+  end
 
   def create
     user = User.new(
@@ -23,6 +27,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     render :show
   end 
+  
   
 # web_response = HTTP.get("https://jooble.org/").parse(:json)
 # render json: web_response
