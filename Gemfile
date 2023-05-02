@@ -74,3 +74,7 @@ end
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'jwt'
+
+gem 'careerjet-api-client', '~> 3.1', '>= 3.1.2'
+
+

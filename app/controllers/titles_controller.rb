@@ -1,5 +1,7 @@
 class TitlesController < ApplicationController
   def index
+    @titles = Title.all 
+    render :index
   end
 
   def show 
