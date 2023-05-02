@@ -78,3 +78,7 @@ gem 'jwt'
 gem 'careerjet-api-client', '~> 3.1', '>= 3.1.2'
 
 gem "http"
+
+gem "net"
+
+gem 'uri'

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   
   resources :titles
+  get "/edit" => "titles#edit"
 
 
   resources :will_applies

@@ -1,5 +1,20 @@
 class ApplicationController < ActionController::Base
 
+  require 'uri'
+  require 'net/http'
+  
+  url = URI("https://indeed12.p.rapidapi.com/jobs/search?query=manager&location=chicago&page_id=2&fromage=3")
+  
+  http = Net::HTTP.new(url.host, url.port)
+  http.use_ssl = true
+  
+  request = Net::HTTP::Get.new(url)
+  request["X-RapidAPI-Key"] = indeed_api_key
+  request["X-RapidAPI-Host"] = 'indeed12.p.rapidapi.com'
+  
+  response = http.request(request)
+
+
   protect_from_forgery with: :exception, unless: -> { request.format.json? }
 
 
@@ -36,6 +51,9 @@ class ApplicationController < ActionController::Base
   def authenticate_user
     redirect_to '/login', status: :see_other unless current_user
   end
+
   
+      
+
 
 end
