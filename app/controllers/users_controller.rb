@@ -19,4 +19,7 @@ class UsersController < ApplicationController
     render :index 
   end 
   
+web_response = HTTP.get("https://jooble.org/").parse(:json)
+render json: web_response
+
 end
