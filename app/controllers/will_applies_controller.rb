@@ -1,0 +1,4 @@
+class WillAppliesController < ApplicationController
+
+
+end

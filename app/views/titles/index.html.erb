@@ -1,3 +1,9 @@
 <h1>Jobs Index</h1>
 
-<%%>
+<h1>All jobs</h1>
+<% @titles.each do |title_for_jobs| %>
+  <h2><%= title_for_jobs.title %></h2>
+  <p>job_description: <%= title_for_jobs.job_description %></p>
+  <p>company: <%= title_for_jobs.company %></p>
+<% end %>
+

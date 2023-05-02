@@ -1,0 +1,2 @@
+class WillApply < ApplicationRecord
+end
