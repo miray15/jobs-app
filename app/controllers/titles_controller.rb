@@ -1,7 +1,11 @@
 class TitlesController < ApplicationController
   def index
-    @titles = Title.all 
-    render :index
+    
+    @response = HTTP.get("https://indeed12.p.rapidapi.com/company/Microsoft")
+    company_description = response.parse 
+    render json: company_description
+
+
   end
 
   def show 
@@ -35,6 +39,7 @@ class TitlesController < ApplicationController
     render :edit
   end
 
+  
 
 
 

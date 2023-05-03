@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::Base
-
   require 'uri'
   require 'net/http'
+  require 'http' 
+
+
+ 
   
   url = URI("https://indeed12.p.rapidapi.com/jobs/search?query=manager&location=chicago&page_id=2&fromage=3")
   
@@ -9,13 +12,14 @@ class ApplicationController < ActionController::Base
   http.use_ssl = true
   
   request = Net::HTTP::Get.new(url)
-  request["X-RapidAPI-Key"] = indeed_api_key
+  request["X-RapidAPI-Key"] = Rails.application.credentials.indeed_api_key
   request["X-RapidAPI-Host"] = 'indeed12.p.rapidapi.com'
   
-  response = http.request(request)
+  @response = http.request(request)
 
 
-  protect_from_forgery with: :exception, unless: -> { request.format.json? }
+
+
 
 
   def current_user

@@ -1,0 +1,10 @@
+class SearchController < ApplicationController
+  
+  
+  <% def index
+    @query = params[:search][:query] if params[:search]
+    if @query.present?
+      @results = HTTParty.get("https://api.example.com/search?q=#{@query}")
+    end
+  end
+end %>
