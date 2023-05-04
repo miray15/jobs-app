@@ -25,3 +25,17 @@ label="Search">
   <%= submit_tag "Search" %>
 <% end %>
 
+
+<%= form_tag searches_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+
+<ul>
+  <% @results.each do |result| %>
+    <li><%= result["name"] %></li>
+    <li><%= result["description"] %></li>
+    <!-- ... -->
+  <% end %>
+</ul>
