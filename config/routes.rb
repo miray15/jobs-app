@@ -21,5 +21,7 @@ Rails.application.routes.draw do
   resources :sessions
 
   get "/searches/:search" => "searches#index"
+  get "/searches/:id" => "searches#show"
+  
   resources :searches
   end 

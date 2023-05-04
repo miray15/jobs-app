@@ -4,10 +4,16 @@
 
 <br><br><br><br><br>
 
-<form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+<%= form_tag searches_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
+  <%= submit_tag "Search" %>
+<% end %>
 
-<!-- app/views/search/index.html.erb -->
 
+<ul>
+  <% @results.each do |result| %>
+    <li><%= result["name"] %></li>
+    <li><%= result["description"] %></li>
+    <!-- ... -->
+  <% end %>
+</ul>

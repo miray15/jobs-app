@@ -83,3 +83,4 @@ gem "net"
 
 gem 'uri'
 
+gem 'haml', '~> 6.1', '>= 6.1.1'
