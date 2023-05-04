@@ -1,27 +1,5 @@
 class ApplicationController < ActionController::Base
-  require 'uri'
-  require 'net/http'
-  require 'http' 
-
-
- 
   
-  url = URI("https://indeed12.p.rapidapi.com/jobs/search?query=manager&location=chicago&page_id=2&fromage=3")
-  
-  http = Net::HTTP.new(url.host, url.port)
-  http.use_ssl = true
-  
-  request = Net::HTTP::Get.new(url)
-  request["X-RapidAPI-Key"] = Rails.application.credentials.indeed_api_key
-  request["X-RapidAPI-Host"] = 'indeed12.p.rapidapi.com'
-  
-  @response = http.request(request)
-
-
-
-
-
-
   def current_user
     auth_headers = request.headers["Authorization"]
     if auth_headers.present? && auth_headers[/(?<=\A(Bearer ))\S+\z/]

@@ -1,10 +1,29 @@
-class SearchController < ApplicationController
-  
-  
-  <% def index
-    @query = params[:search][:query] if params[:search]
-    if @query.present?
-      @results = HTTParty.get("https://api.example.com/search?q=#{@query}")
-    end
-  end
-end %>
+
+<h1>Search below to find your next job</h1>
+<p>Make sure to include the job title and location</p>
+
+<br><br><br><br><br>
+
+<form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+
+<!-- app/views/search/index.html.erb -->
+
+<h1>Search</h1>
+
+<%= form_tag(search_path, method: :get) do %>
+  <%= text_field_tag :query %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<% if @results.present? %>
+  <ul>
+    <% @results.each do |result| %>
+      <li><%= result["title"] %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% end %>

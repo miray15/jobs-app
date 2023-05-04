@@ -20,6 +20,6 @@ Rails.application.routes.draw do
 
   resources :sessions
 
-  get "/searches" => "searches#index"
-  
-end 
+  get "/searches/:search" => "searches#index"
+  resources :searches
+  end 
